@@ -83,7 +83,7 @@ function App() {
         <h1>Lambda Alpha Team</h1>
       </header>
       {/* passing teamMember state, handleSubmit function, and function to update info on form */}
-      <Form teamMembers={teamMembers} onSubmit={handleSubmit} inputData={inputData}/>
+      <Form values={formValues} onSubmit={handleSubmit} inputData={inputData}/>
       {
         teamMembers.map(member => {
           return (
