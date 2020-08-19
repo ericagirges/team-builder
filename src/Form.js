@@ -143,11 +143,11 @@ const Form = (props) => {
             but they can often use the same change handler text inputs use */}
           <select onChange={onChange} value={values.role} name="role">
             <option value="">Select a Role</option>
-            <option value="frontend_engineer">Frontend Engineer</option>
-            <option value="backend_engineer">Backend Engineer</option>
-            <option value="ux_designer">UX Designer</option>
-            <option value="project_lead">Project Lead</option>
-            <option value="data_analyst">Data Anaylst</option>
+            <option value="Frontend Engineer">Frontend Engineer</option>
+            <option value="Backend Engineer">Backend Engineer</option>
+            <option value="UX Designer">UX Designer</option>
+            <option value="Project Lead">Project Lead</option>
+            <option value="Data Analyst">Data Anaylst</option>
           </select>
           </label>
       
