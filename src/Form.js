@@ -4,6 +4,7 @@ import styled from "styled-components";
 const FormContainer = styled.div `
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
     
 `
 
@@ -42,6 +43,11 @@ const InputFields = styled.div `
         width: 200px;
         flex: 0 0 200px;
         margin-left: 20px;
+        font-family: "Fira Sans"
+    }
+
+    input:hover {
+        border-color: #CD0707;
     }
 
     button {
@@ -68,6 +74,8 @@ const Form = (props) => {
   const submit = (event) => {
     event.preventDefault(onSubmit());
   };
+
+  
 
   return (
       <FormContainer>
@@ -98,6 +106,18 @@ const Form = (props) => {
             name="lastName"
             placeholder="Doe"
             maxLength="20"
+          />
+        </label>
+
+        <label>
+          Cohort:&nbsp;
+          <input
+            type="text"
+            value={values.cohort}
+            onChange={onChange}
+            name="cohort"
+            placeholder="WEB9"
+            maxLength="10"
           />
         </label>
        

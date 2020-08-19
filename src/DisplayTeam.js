@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
+
+//team member container styling
 const TeamContainer = styled.div `
     margin-top: 70px;
     font-family: "Fira Sans";
     font-size: 1.4em;
     color: white;
-    display: flex;
-    justify-content: space-evenly;
 
 `
 
@@ -18,6 +18,13 @@ const TeamMembers = styled.div `
     border-radius: 10px;
     background-color: white;
     margin-top: 40px;
+    margin-left: 40px;
+
+    img {
+        margin-top: 30px;
+        height: 100px;
+        width: auto;
+    }
 
     p {
         text-align: left;
@@ -26,7 +33,6 @@ const TeamMembers = styled.div `
     }
 
 `
-
 
 const DisplayTeam = props => {
     const { details } = props
@@ -38,7 +44,9 @@ const DisplayTeam = props => {
     return (
         <TeamContainer>
         <TeamMembers>
+            <img src="/avatar-2.png" alt="avatar"/>
             <h3>{details.firstName} {details.lastName}</h3>
+            <p>Cohort: {details.cohort}</p>
             <p>Email: {details.email}</p>
             <p>Role: {details.role}</p>
         </TeamMembers>

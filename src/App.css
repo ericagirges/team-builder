@@ -18,5 +18,7 @@
 
 .team-container {
   background-color: #787878;
+  display: flex;
+  flex-wrap: wrap;
 }
 

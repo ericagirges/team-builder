@@ -7,6 +7,7 @@ const initialTeam = [
   {
     firstName: "Jack",
     lastName: "Sparrow",
+    cohort: "LABS10",
     email: "captainjack@pirates.com",
     role: "Project Lead"
   },
@@ -15,6 +16,7 @@ const initialTeam = [
 const formSkeleton = {
   firstName: "",
   lastName: "",
+  cohort: "",
   email: "",
   // dropdown option //
   role: "",
@@ -25,10 +27,15 @@ const fakeAxiosGet = () => {
   return Promise.resolve({ status: 200, success: true, data: initialTeam })
 }
 
-const fakeAxiosPost = (urlGoesHere, { firstName, lastName, email, role }) => {
-  const newTeamMember = { firstName, lastName, email, role }
+const fakeAxiosPost = (urlGoesHere, { firstName, lastName, cohort, email, role }) => {
+  const newTeamMember = { firstName, lastName, cohort, email, role }
   return Promise.resolve({ status:200, success: true, data: newTeamMember })
 }
+
+const validateEmail = (email) => {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email)
+    }
 
 function App() {
   // initialize state to hold values
@@ -46,15 +53,23 @@ function App() {
       // trim white space
       firstName: formValues.firstName.trim(),
       lastName: formValues.lastName.trim(),
+      cohort: formValues.cohort.trim(),
       email: formValues.email.trim(),
       role: formValues.role,
     }
 
+    //stretch email validator to check if email provided is in required format
+    if (!validateEmail(teamMember.email)) {
+      alert("Please enter a valid email.")
+      return
+    }
+
     // prevent submit with incomplete data
-    if(!teamMember.firstName || !teamMember.lastName || !teamMember.email){
+    if(!teamMember.firstName || !teamMember.lastName || !teamMember.cohort || !teamMember.email || !teamMember.role){
       alert("Required fields can not be left empty.")
       return
     }
+
 
     // POST to backend
     fakeAxiosPost("nonexistenturl.com", teamMember)
