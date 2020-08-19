@@ -22,16 +22,39 @@ const InputFields = styled.div `
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+    margin-top: 50px;
     font-weight: 400;
-    margin: 0 10px;
     height: 300px;
+    width: 400px;
+
+    label {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        text-align: right;
+        width: 350px;
+        line-height: 26px;
+        margin-bottom: 10px;
+}
+
+    input {
+        height: 30px;
+        width: 200px;
+        flex: 0 0 200px;
+        margin-left: 20px;
+    }
+
+    button {
+        align-self: center;
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        margin-top: 40px;
+        
+    }
    
 `
 
-const FormRow = styled.div `
-    display: grid;
-
-`
 
 const Form = (props) => {
   //pass in props
@@ -53,7 +76,7 @@ const Form = (props) => {
         <h2>Add a New Team Member</h2>
       </div>
       <InputFields classname="input-fields">
-          <FormRow>
+          
         <label>
           First Name:&nbsp;
           <input
@@ -65,8 +88,7 @@ const Form = (props) => {
             maxLength="20"
           />
         </label>
-        </FormRow>
-        <FormRow>
+       
         <label>
           Last Name:&nbsp;
           <input
@@ -78,8 +100,7 @@ const Form = (props) => {
             maxLength="20"
           />
         </label>
-        </FormRow>
-        <FormRow>
+       
         <label>
           Email:&nbsp;
           <input
@@ -91,8 +112,7 @@ const Form = (props) => {
             maxLength="30"
           />
         </label>
-        </FormRow>
-        <FormRow>
+       
         <label>
           Role:&nbsp;
           {/* 🔥 STEP 9 - Make dropdown for role. Dropdowns look very different
@@ -106,7 +126,7 @@ const Form = (props) => {
             <option value="data_analyst">Data Anaylst</option>
           </select>
           </label>
-          </FormRow>
+      
         <button
           onClick={submit}
           disabled={

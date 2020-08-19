@@ -84,6 +84,7 @@ function App() {
       </header>
       {/* passing teamMember state, handleSubmit function, and function to update info on form */}
       <Form values={formValues} onSubmit={handleSubmit} inputData={inputData}/>
+      <div className="team-container">
       {
         teamMembers.map(member => {
           return (
@@ -92,6 +93,7 @@ function App() {
           )
         })
       }
+      </div>
     </div>
   );
 }
