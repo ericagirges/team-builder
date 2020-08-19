@@ -56,6 +56,10 @@ const InputFields = styled.div `
         height: 40px;
         border-radius: 10px;
         margin-top: 40px;
+        background-color: #FDB300;
+        font-family: "Fira Sans";
+        font-weight: 600;
+        font-size: 14px;
         
     }
    

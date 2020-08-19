@@ -17,8 +17,8 @@ const TeamMembers = styled.div `
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
-    margin-top: 40px;
-    margin-left: 40px;
+    margin: 40px 40px 40px 40px;
+    box-shadow: 5px 10px 10px black;
 
     img {
         margin-top: 30px;
